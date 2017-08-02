@@ -1,0 +1,26 @@
+{
+  "name": "ifonnyapi",
+  "version": "1.0.0",
+  "description": "iFonny.fr API",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iFonny/iFonnyAPI.git"
+  },
+  "keywords": [
+    "Api"
+  ],
+  "author": "iFonny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iFonny/iFonnyAPI/issues"
+  },
+  "homepage": "https://github.com/iFonny/iFonnyAPI#readme",
+  "dependencies": {
+    "request": "^2.81.0",
+    "restify": "^5.0.1"
+  }
+}
