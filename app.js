@@ -11,6 +11,16 @@ const server = restify.createServer({
 	name: config.server.name
 });
 
+server.pre(function (req, res, next) {
+	res.setHeader('Access-Control-Allow-Origin', '*');
+	res.setHeader('Access-Control-Allow-Headers', 'Origin, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, X-Response-Time, X-PINGOTHER, X-CSRF-Token,Authorization');
+	res.setHeader('Access-Control-Allow-Methods', '*');
+	res.setHeader('Access-Control-Expose-Headers', 'X-Api-Version, X-Request-Id, X-Response-Time');
+	res.setHeader('Access-Control-Max-Age', '1000');
+
+	return next();
+});
+
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
@@ -38,5 +48,5 @@ server.get('/page/home', routes.page.home);
 
 //  start server
 server.listen(config.server.port, () => {
-	__logInfo(`${server.name} listening at ${server.url}`);
+	__logInfo(`${server.name} listening at ${config.server.port}`);
 });
