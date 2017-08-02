@@ -14,6 +14,7 @@ const server = restify.createServer({
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.bodyParser());
+server.use(restify.plugins.fullResponse());
 server.use(restify.plugins.throttle({
 	burst: 100,
 	rate: 50,
@@ -37,5 +38,5 @@ server.get('/page/home', routes.page.home);
 
 //  start server
 server.listen(config.server.port, () => {
-	console.log(`${server.name} listening at ${server.url}`);
+	__logInfo(`${server.name} listening at ${server.url}`);
 });
