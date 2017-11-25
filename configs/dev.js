@@ -5,7 +5,7 @@ const config = {
 	root: path.normalize(`${__dirname}/..`),
 	server: {
 		name: 'ifonny-api',
-		port: process.env.PORT || 7001
+		port: process.env.PORT || 3003
 	},
 	api: 'http://api.ifonny.fr',
 	url: 'http://beta.ifonny.fr',
