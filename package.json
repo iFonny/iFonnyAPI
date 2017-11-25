@@ -12,6 +12,8 @@
       "script": "./app.js",
       "restart_delay": 1000,
       "watch": true,
+      "instances" : "max",
+      "exec_mode" : "cluster",
       "ignore_watch": [
         "node_modules",
         "*.log",
