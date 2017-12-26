@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/iFonny/iFonnyAPI#readme",
   "dependencies": {
+    "axios": "^0.17.1",
     "request": "^2.81.0",
     "restify": "^5.0.1"
   }

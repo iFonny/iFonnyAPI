@@ -2,6 +2,9 @@ const fs = require('fs');
 const restify = require('restify');
 
 global.config = require('./configs/cursor');
+global._modules = {
+	axios: require('axios')
+}
 
 /* Logs init */
 require('./utils/logs').initLogs();
@@ -44,6 +47,9 @@ fs.readdirSync(routes_path).forEach(function (file) {
 
 // pages
 server.get('/page/home', routes.page.home);
+
+// callback
+server.get('/clock/message/:message', restify.plugins.throttle({ burst: 1, rate: 0.01, ip: true }), routes.clock.message);
 
 
 //  start server

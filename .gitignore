@@ -57,3 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
+
+\.DS_Store
+
+configs/dev-secret\.json
+
+configs/prod-secret\.json

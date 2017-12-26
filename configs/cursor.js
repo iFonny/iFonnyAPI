@@ -11,11 +11,13 @@ switch (env) {
     // Development
     case 'dev':
         config = devConfig;
+        config.secret = require('./dev-secret');
         break;
 
         // Production
     case 'prod':
         config = prodConfig;
+        config.secret = require('./prod-secret');
         break;
 }
 
