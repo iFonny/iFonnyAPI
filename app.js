@@ -49,7 +49,7 @@ fs.readdirSync(routes_path).forEach(function (file) {
 server.get('/page/home', routes.page.home);
 
 // callback
-server.get('/clock/message/:message', restify.plugins.throttle({ burst: 1, rate: 0.01, ip: true }), routes.clock.message);
+server.get('/clock/message/:message', restify.plugins.throttle({ burst: 2, rate: 0.08, ip: true }), routes.clock.message);
 
 
 //  start server
