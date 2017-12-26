@@ -9,7 +9,7 @@ exports.message = function (req, res, next) {
 		req.params.user = req.params.user.trim().substr(0,8);
 	} else req.params.user = '';
 
-	const icon = 3143;
+	let icon = 3143;
 
 	switch (req.params.user) {
 		case 'equinox':
