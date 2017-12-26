@@ -49,6 +49,7 @@ fs.readdirSync(routes_path).forEach(function (file) {
 server.get('/page/home', routes.page.home);
 
 // clock
+server.get('/clock/message/:message', restify.plugins.throttle({ burst: 2, rate: 0.08, ip: true }), routes.clock.message);
 server.get('/clock/message/:message/:user', restify.plugins.throttle({ burst: 2, rate: 0.08, ip: true }), routes.clock.message);
 
 

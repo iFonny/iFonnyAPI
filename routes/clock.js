@@ -1,7 +1,7 @@
 /**
  * GET /clock/message/:message
  * 
- * message: less 16 chars
+ * message: less 20 chars
  */
 exports.message = function (req, res, next) {
 
@@ -22,8 +22,8 @@ exports.message = function (req, res, next) {
 
 	if (!req.params.message || req.params.message.trim() == '') {
 		res.json(400, 'Error: Tu peux entrer un message stp?');
-	} else if (req.params.message.length > 16) {
-		res.json(400, "Error: Tu peux pas entrer de message de plus de 16 characteres psk sinon c'est chiant a lire les pixels 'fin voila voila");
+	} else if (req.params.message.length > 20) {
+		res.json(400, "Error: Tu peux pas entrer de message de plus de 20 characteres psk sinon c'est chiant a lire les pixels 'fin voila voila");
 	} else {
 		_modules.axios.post(`https://maker.ifttt.com/trigger/clock_message/with/key/${config.secret.ifttt.webhookKey}`, {
 			value1: req.params.message.trim(),
