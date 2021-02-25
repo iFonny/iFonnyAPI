@@ -53,6 +53,11 @@ exports.home = function (req, res, next) {
 			}
 		},
 		list: [{
+			network: 'Github',
+			username: 'iFonny',
+			url: 'https://github.com/iFonny',
+			image: '/assets/images/social/github.png'
+		}, {
 			network: 'Instagram',
 			username: 'ifonny_',
 			url: 'https://www.instagram.com/ifonny_/',
@@ -72,11 +77,6 @@ exports.home = function (req, res, next) {
 			username: 'iFonny',
 			url: '/smurfs',
 			image: '/assets/images/social/lol.png'
-		}, {
-			network: 'Snapchat',
-			username: 'iphonitest',
-			url: 'https://www.snapchat.com/',
-			image: '/assets/images/social/snapchat.png'
 		}, {
 			network: 'Twitch',
 			username: 'iFonny',
